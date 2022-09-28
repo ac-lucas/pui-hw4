@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 
 export function Dropdown(props) {
     return (
-        <select id="glazing" name="glazing" action={props.action}>
+        <select id="glazing" name="glazing" action={props.action} onChange={props.onChange}>
             {props.children}
         </select>
     );
@@ -13,7 +13,7 @@ export function Dropdown(props) {
 export function Option(props) {
     return (
         <option selected={props.selected}>
-            {props.value}
+            {props.textContent}
         </option>
     );
 }

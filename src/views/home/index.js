@@ -9,56 +9,48 @@ class Homepage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          cardData: [
-            {
-                cardImgURL: "assets/original-cinnamon-roll.jpg",
-                cardAlt: "original cinnamon roll",
-                cardTitle: "Original cinnamon roll",
-                cardPrice: "2.49"
-            },
-            {
-                cardImgURL: "assets/apple-cinnamon-roll.jpg",
-                cardAlt: "apple cinnamon roll",
-                cardTitle: "Apple cinnamon roll",
-                cardPrice: "3.49"
-            },
-            {
-                cardImgURL: "assets/raisin-cinnamon-roll.jpg",
-                cardAlt: "raisin cinnamon roll",
-                cardTitle: "Raisin cinnamon roll",
-                cardPrice: "2.99"
-            },
-            {
-                cardImgURL: "assets/walnut-cinnamon-roll.jpg",
-                cardAlt: "walnut cinnamon roll",
-                cardTitle: "Walnut cinnamon roll",
-                cardPrice: "3.49"
-            },
-            {
-                cardImgURL: "assets/double-chocolate-cinnamon-roll.jpg",
-                cardAlt: "double chocolate cinnamon roll",
-                cardTitle: "Double-chocolate cinnamon roll",
-                cardPrice: "3.99"
-            },
-            {
-                cardImgURL: "assets/strawberry-cinnamon-roll.jpg",
-                cardAlt: "strawberry cinnamon roll",
-                cardTitle: "Strawberry cinnamon roll",
-                cardPrice: "3.99"
-            }
-          ],
+            cardData: [
+                {
+                    cardImgURL: "assets/original-cinnamon-roll.jpg",
+                    cardAlt: "original cinnamon roll",
+                    cardTitle: "Original cinnamon roll",
+                    cardPrice: "2.49"
+                },
+                {
+                    cardImgURL: "assets/apple-cinnamon-roll.jpg",
+                    cardAlt: "apple cinnamon roll",
+                    cardTitle: "Apple cinnamon roll",
+                    cardPrice: "3.49"
+                },
+                {
+                    cardImgURL: "assets/raisin-cinnamon-roll.jpg",
+                    cardAlt: "raisin cinnamon roll",
+                    cardTitle: "Raisin cinnamon roll",
+                    cardPrice: "2.99"
+                },
+                {
+                    cardImgURL: "assets/walnut-cinnamon-roll.jpg",
+                    cardAlt: "walnut cinnamon roll",
+                    cardTitle: "Walnut cinnamon roll",
+                    cardPrice: "3.49"
+                },
+                {
+                    cardImgURL: "assets/double-chocolate-cinnamon-roll.jpg",
+                    cardAlt: "double chocolate cinnamon roll",
+                    cardTitle: "Double-chocolate cinnamon roll",
+                    cardPrice: "3.99"
+                },
+                {
+                    cardImgURL: "assets/strawberry-cinnamon-roll.jpg",
+                    cardAlt: "strawberry cinnamon roll",
+                    cardTitle: "Strawberry cinnamon roll",
+                    cardPrice: "3.99"
+                }
+            ],
         }
     }
 
-    handlePriceChange = (event) => {
-        const newPrice = event.target.value;
-        this.setState(prevState => ({
-          ...prevState,
-          cardPrice: newPrice
-        }))
-      };
 
-    
 
     render() {
         return (
@@ -88,10 +80,10 @@ class Homepage extends Component {
 
                     <div className="column" id="raisin">
                         <Card
-                           cardImgURL={this.state.cardData[2].cardImgURL}
-                           cardAlt={this.state.cardData[2].cardAlt}
-                           cardTitle={this.state.cardData[2].cardTitle}
-                           cardPrice={this.state.cardData[2].cardPrice}
+                            cardImgURL={this.state.cardData[2].cardImgURL}
+                            cardAlt={this.state.cardData[2].cardAlt}
+                            cardTitle={this.state.cardData[2].cardTitle}
+                            cardPrice={this.state.cardData[2].cardPrice}
                         />
 
                     </div>

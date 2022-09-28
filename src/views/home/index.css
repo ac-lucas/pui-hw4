@@ -112,17 +112,32 @@ select {
 }
 
 .card-size-squares {
-  flex-grow: 2;
+  display: flex;
+}
+
+.selected {
+  background-color: #c7c7c7;
+}
+
+/* referenced from https://codepen.io/w3programmings/pen/zzRKpy */
+.boxed {
   display: flex;
   justify-content: space-between;
 }
 
-.card-size-squares button {
+.boxed label {
   padding: 5px 11px 5px 11px;
   font-size: 17px;
+  border: solid 2px black;
+  transition: all 0.3s;
+  margin-right: 10px;
 }
 
-.selected {
+.boxed input[type="radio"] {
+  display: none;
+}
+
+.boxed input[type="radio"]:checked + label {
   background-color: #c7c7c7;
 }
 
