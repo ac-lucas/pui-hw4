@@ -6,35 +6,47 @@ class Card extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            updatedCardPrice: this.props.cardPrice
+            updatedCardPrice: this.props.cardPrice,
+            newPrice: "0",
+            glazingPrice: "0",
+            multiplier: "1"
         }
     }
 
 
     handlePriceChange = (event) => {
-        let newPrice = "0";
-        let multiplier = "1";
 
         if (event.target.value === "Vanilla milk") {
-            newPrice = ".5"
+            this.state.glazingPrice = ".5"
         }
         else if (event.target.value === "Double chocolate") {
-            newPrice = "1.5"
+            this.state.glazingPrice = "1.5"
+        }
+        else if (event.target.value === "Keep original") {
+            this.state.glazingPrice = "0"
+        }
+        else if (event.target.value === "Sugar milk") {
+            this.state.glazingPrice = "0"
         }
 
+
         if (event.target.value === "3") {
-            multiplier = 3;
+            this.state.multiplier = 3;
         }
         else if (event.target.value === "6") {
-            multiplier = 5;
+            this.state.multiplier = 5;
         }
         else if (event.target.value === "12") {
-            multiplier = 10;
+            this.state.multiplier = 10;
         }
-        newPrice = +newPrice + +this.props.cardPrice;
-        newPrice = +newPrice * +multiplier;
-        newPrice = newPrice.toFixed(2);
-        this.setState({ updatedCardPrice: newPrice });
+        else if (event.target.value === "1") {
+            this.state.multiplier = 1;
+        }
+
+        this.state.newPrice = +this.state.glazingPrice + +this.props.cardPrice;
+        this.state.newPrice = +this.state.newPrice * +this.state.multiplier;
+        this.state.newPrice = this.state.newPrice.toFixed(2);
+        this.setState({ updatedCardPrice: this.state.newPrice });
     };
 
     render() {
