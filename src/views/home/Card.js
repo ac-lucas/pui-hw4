@@ -9,7 +9,7 @@ class Card extends Component {
             updatedCardPrice: this.props.cardPrice,
             newPrice: "0",
             glazingPrice: "0",
-            multiplier: "1"
+            multiplier: "1",
         }
     }
 
@@ -79,17 +79,17 @@ class Card extends Component {
 
                         {/*referenced from https://codepen.io/w3programmings/pen/zzRKpy */}
                         <form className="boxed" onChange={this.handlePriceChange}>
-                            <input type="radio" id="pack1" name="card-size" value="1" />
-                            <label htmlFor="pack1">1</label>
+                            <input type="radio" id={this.props.id1} name="card-size" value="1" />
+                            <label htmlFor={this.props.id1}>1</label>
 
-                            <input type="radio" id="pack3" name="card-size" value="3" />
-                            <label htmlFor="pack3">3</label>
+                            <input type="radio" id={this.props.id2} name="card-size" value="3" />
+                            <label htmlFor={this.props.id2}>3</label>
 
-                            <input type="radio" id="pack6" name="card-size" value="6" />
-                            <label htmlFor="pack6">6</label>
+                            <input type="radio" id={this.props.id3} name="card-size" value="6" />
+                            <label htmlFor={this.props.id3}>6</label>
 
-                            <input type="radio" id="pack12" name="card-size" value="12" />
-                            <label htmlFor="pack12">12</label>
+                            <input type="radio" id={this.props.id4} name="card-size" value="12" />
+                            <label htmlFor={this.props.id4}>12</label>
                         </form>
                     </div>
                 </div>
