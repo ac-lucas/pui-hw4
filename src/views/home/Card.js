@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Dropdown, Option } from "./Dropdown";
 
 class Card extends Component {
 
@@ -13,12 +14,14 @@ class Card extends Component {
 
                 <div className="card-glazing">
                     <label htmlFor="glazing1">Glazing:</label>
-                    <select name="glazing" id="glazing1">
-                        <option value="Keep original" selected>Keep original</option>
-                        <option value="Sugar milk">Sugar milk</option>
-                        <option value="Vanilla milk">Vanilla milk</option>
-                        <option value="Double chocolate">Double chocolate</option>
-                    </select>
+                    <Dropdown
+                        action="/"
+                    >
+                        <Option value="Keep original" />
+                        <Option value="Sugar milk" />
+                        <Option value="Vanilla milk" />
+                        <Option value="Double chocolate" />
+                    </Dropdown>
                 </div>
 
                 <div className="card-size">
@@ -35,7 +38,7 @@ class Card extends Component {
 
                 <div className="card-price">
                     <div className="card-price-left">
-                        <p>{this.props.cardPrice}</p>
+                        <p onChange={this.handlePriceChange}>{this.props.cardPrice}</p>
                     </div>
                     <div className="card-price-right">
                         <button type="button">Add to Cart</button>
