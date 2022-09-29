@@ -5,7 +5,8 @@ class Navbar extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            stringItems: "item"
+            stringItems: "item",
+            showCart: false
         }
     }
 
@@ -15,6 +16,12 @@ class Navbar extends Component {
         }
         else {
             this.state.stringItems = "item"
+        }
+    }
+
+    displayCart () {
+        if (this.props.items >= 0) {
+            this.state.showCart= true
         }
     }
 
@@ -36,8 +43,9 @@ class Navbar extends Component {
                             <a href="">CART</a>
                         </div>
 
-                        <div className="cart-items">
+                        <div className="cart-items" style={{ display: this.state.showCart ? "block" : "none" }}>
                             {this.pluralize()}
+                            {this.displayCart()}
                             <p>{this.props.items} {this.state.stringItems}</p>
                             <p>Total: $ {this.props.price}</p>
                         </div>

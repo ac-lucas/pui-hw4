@@ -79,7 +79,7 @@ class Homepage extends Component {
 
     handleCart = (cardData) => {
         this.state.totalItems = +this.state.totalItems + +1
-        this.setState({totalPrice: +this.state.totalPrice + +cardData, totalItems: +this.state.totalItems})
+        this.setState({totalPrice: (+this.state.totalPrice + +cardData).toFixed(2), totalItems: +this.state.totalItems})
     }
 
 
