@@ -71,7 +71,15 @@ class Homepage extends Component {
                     id4: "id24"
                 }
             ],
+
+            totalPrice: 0,
+            totalItems: 0
         }
+    }
+
+    handleCart = (cardData) => {
+        this.state.totalItems = +this.state.totalItems + +1
+        this.setState({totalPrice: +this.state.totalPrice + +cardData, totalItems: +this.state.totalItems})
     }
 
 
@@ -79,7 +87,11 @@ class Homepage extends Component {
     render() {
         return (
             <div>
-                <Navbar />
+                <Navbar
+                    price={this.state.totalPrice}
+                    items={this.state.totalItems}
+                
+                />
 
                 <div className="cards row">
 
@@ -93,6 +105,7 @@ class Homepage extends Component {
                             id2 = {this.state.cardData[0].id2}
                             id3 = {this.state.cardData[0].id3}
                             id4 = {this.state.cardData[0].id4}
+                            priceCallBack = {this.handleCart}
                         />
 
                     </div>
@@ -107,6 +120,7 @@ class Homepage extends Component {
                             id2 = {this.state.cardData[1].id2}
                             id3 = {this.state.cardData[1].id3}
                             id4 = {this.state.cardData[1].id4}
+                            priceCallBack = {this.handleCart}
                         />
                     </div>
 
@@ -120,6 +134,7 @@ class Homepage extends Component {
                             id2 = {this.state.cardData[2].id2}
                             id3 = {this.state.cardData[2].id3}
                             id4 = {this.state.cardData[2].id4}
+                            priceCallBack = {this.handleCart}
                         />
 
                     </div>
@@ -138,6 +153,7 @@ class Homepage extends Component {
                             id2 = {this.state.cardData[3].id2}
                             id3 = {this.state.cardData[3].id3}
                             id4 = {this.state.cardData[3].id4}
+                            priceCallBack = {this.handleCart}
                         />
 
                     </div>
@@ -152,6 +168,7 @@ class Homepage extends Component {
                             id2 = {this.state.cardData[4].id2}
                             id3 = {this.state.cardData[4].id3}
                             id4 = {this.state.cardData[4].id4}
+                            priceCallBack = {this.handleCart}
                         />
 
                     </div>
@@ -166,6 +183,7 @@ class Homepage extends Component {
                             id2 = {this.state.cardData[5].id2}
                             id3 = {this.state.cardData[5].id3}
                             id4 = {this.state.cardData[5].id4}
+                            priceCallBack = {this.handleCart}
                         />
 
                     </div>

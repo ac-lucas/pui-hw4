@@ -7,9 +7,10 @@ class Card extends Component {
         super(props);
         this.state = {
             updatedCardPrice: this.props.cardPrice,
-            newPrice: "0",
-            glazingPrice: "0",
-            multiplier: "1",
+            newPrice: 0,
+            glazingPrice: 0,
+            multiplier: 1,
+            cardTotalPrice: 0
         }
     }
 
@@ -47,6 +48,10 @@ class Card extends Component {
         this.state.newPrice = +this.state.newPrice * +this.state.multiplier;
         this.state.newPrice = this.state.newPrice.toFixed(2);
         this.setState({ updatedCardPrice: this.state.newPrice });
+    };
+
+    handleAddToCart = (event) => {
+        this.props.priceCallBack(this.state.updatedCardPrice)
     };
 
     render() {
@@ -99,7 +104,7 @@ class Card extends Component {
                         <p>{this.state.updatedCardPrice}</p>
                     </div>
                     <div className="card-price-right">
-                        <button type="button">Add to Cart</button>
+                        <button type="button" onClick={this.handleAddToCart}>Add to Cart</button>
                     </div>
                 </div>
             </div>
