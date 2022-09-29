@@ -73,13 +73,26 @@ class Homepage extends Component {
             ],
 
             totalPrice: 0,
-            totalItems: 0
+            totalItems: 0,
+            tempTitle: "",
+            tempGlazing: "",
+            tempPack: "",
+            itemCost: "",
+            clicked: false
         }
     }
 
-    handleCart = (cardData) => {
+    handleCart = (priceData, title, glazing, pack, popup) => {
         this.state.totalItems = +this.state.totalItems + +1
-        this.setState({totalPrice: (+this.state.totalPrice + +cardData).toFixed(2), totalItems: +this.state.totalItems})
+        this.setState({totalPrice: (+this.state.totalPrice + +priceData).toFixed(2), 
+            totalItems: +this.state.totalItems, tempTitle: title,
+            tempGlazing: glazing, tempPack: pack, itemCost: priceData,
+            clicked: popup
+        })
+    }
+
+    handlePopup = (popup) => {
+        this.setState ({clicked: popup})
     }
 
 
@@ -90,6 +103,11 @@ class Homepage extends Component {
                 <Navbar
                     price={this.state.totalPrice}
                     items={this.state.totalItems}
+                    title={this.state.tempTitle}
+                    glazing={this.state.tempGlazing}
+                    pack={this.state.tempPack}
+                    cost={this.state.itemCost}
+                    display={this.state.clicked}
                 
                 />
 
@@ -106,6 +124,7 @@ class Homepage extends Component {
                             id3 = {this.state.cardData[0].id3}
                             id4 = {this.state.cardData[0].id4}
                             priceCallBack = {this.handleCart}
+                            popupHandler = {this.handlePopup}
                         />
 
                     </div>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Popup } from './Popup';
 
 class Navbar extends Component {
 
@@ -10,7 +11,7 @@ class Navbar extends Component {
         }
     }
 
-    pluralize () {
+    pluralize() {
         if (this.props.items != 1) {
             this.state.stringItems = "items"
         }
@@ -19,11 +20,24 @@ class Navbar extends Component {
         }
     }
 
-    displayCart () {
+    displayCart() {
         if (this.props.items >= 0) {
-            this.state.showCart= true
+            this.state.showCart = true
         }
     }
+
+    displayPopup() {
+        if (this.props.display) {
+            return <Popup
+                itemName={this.props.title}
+                itemGlazing={this.props.glazing}
+                itemPackSize={this.props.pack}
+                itemPrice={this.props.cost}
+                showPopup={this.props.display}
+            />
+        }
+    }
+
 
 
 
@@ -51,6 +65,7 @@ class Navbar extends Component {
                         </div>
 
                         <div className="cart-popup">
+                            {this.displayPopup()}
                         </div>
 
                         <hr className="navbar-divider" />

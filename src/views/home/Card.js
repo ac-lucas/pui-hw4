@@ -10,7 +10,10 @@ class Card extends Component {
             newPrice: 0,
             glazingPrice: 0,
             multiplier: 1,
-            cardTotalPrice: 0
+            cardTotalPrice: 0,
+            glazingName: "Keep original",
+            itemPackSize: 1,
+            showCart: false
         }
     }
 
@@ -19,29 +22,37 @@ class Card extends Component {
 
         if (event.target.value === "Vanilla milk") {
             this.state.glazingPrice = ".5"
+            this.state.glazingName = "Vanilla milk"
         }
         else if (event.target.value === "Double chocolate") {
             this.state.glazingPrice = "1.5"
+            this.state.glazingName = "Double chocolate"
         }
         else if (event.target.value === "Keep original") {
             this.state.glazingPrice = "0"
+            this.state.glazingName = "Keep original"
         }
         else if (event.target.value === "Sugar milk") {
             this.state.glazingPrice = "0"
+            this.state.glazingName = "Sugar milk"
         }
 
 
         if (event.target.value === "3") {
             this.state.multiplier = 3;
+            this.state.itemPackSize = 3
         }
         else if (event.target.value === "6") {
             this.state.multiplier = 5;
+            this.state.itemPackSize = 6
         }
         else if (event.target.value === "12") {
             this.state.multiplier = 10;
+            this.state.itemPackSize = 12
         }
         else if (event.target.value === "1") {
             this.state.multiplier = 1;
+            this.state.itemPackSize = 1
         }
 
         this.state.newPrice = +this.state.glazingPrice + +this.props.cardPrice;
@@ -51,7 +62,10 @@ class Card extends Component {
     };
 
     handleAddToCart = (event) => {
-        this.props.priceCallBack(this.state.updatedCardPrice)
+        this.state.showCart = true
+        this.props.priceCallBack(this.state.updatedCardPrice, this.props.cardTitle, this.state.glazingName, this.state.itemPackSize, this.state.showCart)
+        this.state.showCart = false
+
     };
 
     render() {
