@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { useState, useEffect } from 'react';
 
+// referenced from https://stackoverflow.com/questions/65214950/how-to-disappear-alert-after-5-seconds-in-react-js
+
 export function Popup(props) {
     const [show, setShow] = useState(true)
   
-    // On componentDidMount set the timer
     useEffect(() => {
       const timeId = setTimeout(() => {
         // After 3 seconds set the show value to false
@@ -14,14 +15,12 @@ export function Popup(props) {
       return () => {
         clearTimeout(timeId)
       }
-    }, []);
+    });
   
-    // If show is false the component will return null and stop here
     if (!show) {
       return null;
     }
   
-    // If show is true this will be returned
     return (
       <div className='popup'>
         <p>Added to cart: </p>

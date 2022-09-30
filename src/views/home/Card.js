@@ -65,7 +65,6 @@ class Card extends Component {
         this.state.showCart = true
         this.props.priceCallBack(this.state.updatedCardPrice, this.props.cardTitle, this.state.glazingName, this.state.itemPackSize, this.state.showCart)
         this.state.showCart = false
-
     };
 
     render() {

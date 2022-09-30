@@ -91,11 +91,6 @@ class Homepage extends Component {
         })
     }
 
-    handlePopup = (popup) => {
-        this.setState ({clicked: popup})
-    }
-
-
 
     render() {
         return (
@@ -124,7 +119,6 @@ class Homepage extends Component {
                             id3 = {this.state.cardData[0].id3}
                             id4 = {this.state.cardData[0].id4}
                             priceCallBack = {this.handleCart}
-                            popupHandler = {this.handlePopup}
                         />
 
                     </div>
