@@ -25,7 +25,8 @@ export function Popup(props) {
     return (
       <div className='popup'>
         <p>Added to cart: </p>
-        <p>{props.itemName}</p>
+        <br></br>
+        <b>{props.itemName}</b>
         <p>{props.itemGlazing} glazing</p>
         <p>Pack of {props.itemPackSize}</p>
         <p>Price: ${props.itemPrice}</p>

@@ -66,14 +66,23 @@ label {
   margin-right: 85px;
 }
 
+.cart-items p {
+  margin-bottom: -10px;
+}
+
 .cart-popup {
   background-color: white;
   border: 1px solid black;
   right: 0;
   position: absolute;
   margin-right: 85px;
-  margin-top: -100px;
+  margin-top: -60px;
   z-index: 9;
+}
+
+.popup p {
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 /* main content */
